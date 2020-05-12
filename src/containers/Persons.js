@@ -15,6 +15,7 @@ const Persons = ({ persons, addPerson, deletePerson }) => {
           name={person.name}
           age={person.age}
           deletePerson={deletePerson}
+          image={person.image}
         />
       ))}
     </div>
