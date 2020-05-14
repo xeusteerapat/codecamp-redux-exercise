@@ -7,7 +7,7 @@ import AddPerson from '../components/AddPerson/AddPerson';
 const Persons = ({ persons, addPerson, deletePerson }) => {
   return (
     <div>
-      <AddPerson addPerson={addPerson} />
+      <AddPerson addPerson={addPerson} persons={persons} />
       {persons.map(person => (
         <Person
           id={person.id}

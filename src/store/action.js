@@ -2,11 +2,11 @@ import * as actionTypes from './types';
 import { v4 as uuid } from 'uuid';
 import faker from 'faker';
 
-export const addPerson = () => ({
+export const addPerson = (name, age) => ({
   type: actionTypes.ADD_PERSON,
   id: uuid(),
-  name: faker.name.firstName(),
-  age: Math.round(Math.random() * 30),
+  name,
+  age,
   image: faker.image.avatar()
 });
 
