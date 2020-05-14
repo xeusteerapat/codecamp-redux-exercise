@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addPerson, deletePerson } from '../store/action';
+import { addPersonAsync, deletePerson } from '../store/action';
 import Person from '../components/Person/Person';
 import AddPerson from '../components/AddPerson/AddPerson';
 
-const Persons = ({ persons, addPerson, deletePerson }) => {
+const Persons = ({ persons, addPersonAsync, deletePerson }) => {
   return (
     <div>
-      <AddPerson addPerson={addPerson} persons={persons} />
+      <AddPerson addPerson={addPersonAsync} persons={persons} />
       {persons.map(person => (
         <Person
           id={person.id}
@@ -26,4 +26,6 @@ const mapStateToProps = state => ({
   persons: state.persons
 });
 
-export default connect(mapStateToProps, { addPerson, deletePerson })(Persons);
+export default connect(mapStateToProps, { addPersonAsync, deletePerson })(
+  Persons
+);

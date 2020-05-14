@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 import { personReducer } from './store/reducer';
 import './index.css';
 import App from './App';
@@ -31,7 +32,7 @@ const composeEnchancers =
 
 const store = createStore(
   personReducer,
-  composeEnchancers(applyMiddleware(logger1, logger2))
+  composeEnchancers(applyMiddleware(logger1, logger2, thunk))
 );
 
 ReactDOM.render(
