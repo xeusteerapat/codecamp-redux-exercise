@@ -20,7 +20,7 @@ const AddPerson = ({ addPerson }) => {
           e.preventDefault();
           addPerson(nameInput.value, ageInput.value);
           nameInput.value = '';
-          ageInput.value = undefined;
+          ageInput.value = 0;
         }}
       >
         <input type="text" ref={handleNameChange} />
