@@ -9,7 +9,7 @@ import App from './App';
 const logger1 = store => {
   return next => {
     return action => {
-      console.log('[Middleware logger 1] ... dispatching');
+      console.log('[Middleware logger 1] ... dispatching', action);
       next(action);
       console.log(store.getState(), '...logger1');
     };
@@ -19,7 +19,7 @@ const logger1 = store => {
 const logger2 = store => {
   return next => {
     return action => {
-      console.log('[Middleware logger 2] ... dispatching');
+      console.log('[Middleware logger 2] ... dispatching', action);
       next(action);
       console.log(store.getState(), '...logger2');
     };
